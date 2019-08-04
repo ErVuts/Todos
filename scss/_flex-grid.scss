@@ -1,0 +1,42 @@
+$grid-gap:15px;
+$columns:12;
+
+.container {
+	max-width: 1140px;
+	width: 96%;
+	padding: $grid-gap;
+	margin: 0 auto;
+	// outline:1px solid red;
+
+}
+
+.row {
+		display: flex;
+		justify-content:space-between;
+		align-items: flex-start;
+		flex-wrap:wrap;
+		margin: 0 -1 * $grid-gap;
+		& + & {
+		margin-top:$grid-gap;
+	}
+
+}
+
+[class^="col-"] {
+	margin: 0 $grid-gap;
+	// background-color: rgba(20,20,20,.3);
+}
+
+@mixin col-1-x {
+	@for $i from 1 through $columns {
+		.col-1-#{$i} {
+			width:calc(100% / #{$i} - (2 * #{$grid-gap}));
+			@media screen and (max-width:768px) {
+				width:calc(100%  - (2 * #{$grid-gap}));
+				margin-bottom: $grid-gap;
+			}
+		}
+	}
+}
+
+@include col-1-x;

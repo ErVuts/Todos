@@ -1,5 +1,7 @@
 @import 'normalize';
-@import 'mixins';
+@import 'mixin';
+
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -11,9 +13,185 @@ html {
 }
 
 body {
-	/* font-family: ''; */
 	font-size: 1.8rem;
 	line-height: 1.6;
-	color: #333;
-	min-height: 100%;
+	font-family:'Red Hat Display', sans-serif ;
+	color: #93969e;
+	height: 100%;
+	margin: 0;
+	background-color: #F5F2F2;
+	display: flex;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+
+.container {
+	max-width:800px;
+	width:96%;
+}
+
+.paper {
+	margin: 40px 0;
+	border-radius:1%;
+	background-color: #fff;
+	padding: 10px 0;
+	border:2px solid #e6ebed;
+	position: relative;
+	box-shadow:
+    0 1px 1px rgba(0,0,0,0.15),
+    0 10px 0 -5px #eee,
+    0 10px 1px -4px rgba(0,0,0,0.15),
+    0 20px 0 -10px #eee,
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    padding: 30px;
+}
+
+h1,
+h2 {
+	padding: 5px 0;
+	margin: 10px;
+}
+
+.form {
+	padding: 5px 0;
+	margin: 10px;
+	&__text {
+		width:100%;
+	}
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+
+.tds {	
+	li {
+		position: relative;
+		&::before{
+			content:'';
+			border-right:1px solid #ecc5ba;
+		    width: 1%;
+		    height: 100%;
+		    position: absolute;
+		    left:4%;
+		    top:1%;
+		}
+		&::after{
+			content:'';
+			border-right:1px solid #ecc5ba;
+		    width: 1%;
+		    height: 100%;
+		    position: absolute;
+		    left:4.5%;
+		    top:1%;
+		}
+	}
+	.editBTN, {
+		border:none;
+		position: absolute;
+		top:1.5%;
+		left:84%;
+		height: 100%;
+		background-color:#477ae0;
+		color:#fff;
+		border:1px solid transparent;
+		@include hover {
+			border: 1px solid #477ae0;
+			background-color: #fff;
+			color:#000;
+		}
+	}
+
+	.deleteBTN {
+		border:none;
+		position: absolute;
+		top:1.5%;
+		left:91%;
+		height: 100%;
+		background-color:#b83a3a;
+		color:#fff;
+		border:1px solid transparent;
+		@include hover {
+			border: 1px solid #b83a3a;
+			background-color: #fff;
+			color:#000;
+		}
+	}
+	&__txt {
+		position: absolute;
+		padding-left: 5px;
+		width:70%;
+		@include ellipsis();
+		color:#6c6d71;
+		
+	}
+}
+
+.cmpltd{
+	li{
+		position: relative;
+		.deleteBTN {
+			border:none;
+			position: absolute;
+			top:1.5%;
+			left:91%;
+			height: 100%;
+			background-color:#b83a3a;
+			color:#fff;
+			border:1px solid transparent;
+			@include hover {
+				border: 1px solid #b83a3a;
+				background-color: #fff;
+				color:#000;
+			}
+		}
+	}
+	&__txt {
+		display: block;
+		width:80%;
+		@include ellipsis();
+		padding-left:10px;
+		text-decoration: line-through;
+		color:#6c6d71;
+	}
+}
+
+li {
+	padding: 5px 0;
+	margin: 10px;
+	border:2px solid #e6ebed;
+	box-shadow:10px 10px 5px -10px rgba(0,0,0,0.75)
+}
+
+input[type=checkbox] {
+	margin:4px 15px 0 8px;
+	width:20px;
+	height:20px;
+}
+
+.form {
+	position: relative;
+	&__btn {
+		border:none;
+		position: absolute;
+		top:1.5%;
+		left:97%;
+		height: 100%;
+		background-color:#088a29;
+		color:#fff;
+		border-radius:5px;
+		&:disabled {
+			background-color: #70987a;
+		}
+	}
+	&__text{
+	padding: 10px 0;
+	border:2px solid #e6ebed;
+	@include shadowPush();
+		&::placeholder{
+			padding-left: 15px;
+		}
+	}
 }

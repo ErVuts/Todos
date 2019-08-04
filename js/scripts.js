@@ -52,7 +52,7 @@
 		let html  = `							
 							<label>
 								<input type="checkbox">
-								<span>${text}</span>
+								<span class="tds__txt">${text}</span>
 							</label>
 							<input type="text" value="${text}" hidden>
 							<button class="editBTN">Edit</button>
@@ -62,7 +62,7 @@
 						   `;     										// Готовим html для элемента списка todos
 
 		if (targetList == 'completed') {
-			html = `${text} <button class="deleteBTN">Delete</button>`; // Готовим html для элемента списка completed
+			html = `<span class="cmpltd__txt">${text}</span> <button class="deleteBTN">Delete</button>`; // Готовим html для элемента списка completed
 		}
 
 		newLi.innerHTML = html;  										// Записываем html в элемент списка

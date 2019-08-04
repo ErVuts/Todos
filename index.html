@@ -13,20 +13,22 @@
 	<meta name="description" content="">
 </head>
 <body>
-	<h1>Todos</h1>
-	<form action="" method="post">
-		<input type="text" id="todoInput" placeholder="Enter your TODO">
-		<button disabled id="addBTN">add</button>
-	</form>
-
-	<h2>Todo List</h2>
-	<ul id="todos"></ul>
-
-	<h2>Completed List</h2>
-	<ul id="completed"></ul>
-
-
-
+	<div class="container">
+			<div class="paper">
+				<h1>Todos</h1>
+				<form action="" method="post"  class="form">
+					<input type="text" id="todoInput" placeholder="Enter your TODO"  class="form__text">
+					<button disabled id="addBTN" class="form__btn">Add</button>
+				</form>
+						
+				<h2>Todo List</h2>
+				<ul id="todos" class="tds"></ul>
+						
+				<h2>Completed List</h2>
+				<ul id="completed" class="cmpltd"></ul>
+			</div>
+		
+		</div>
 <script src="js/scripts.js"></script>	
 </body>
 </html>

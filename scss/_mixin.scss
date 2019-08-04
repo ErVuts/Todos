@@ -1,0 +1,74 @@
+@mixin tdn() {
+	text-decoration: none;
+}
+
+@mixin tr($prop) {
+	transition: $prop .4s ease-in;
+}
+
+@mixin hover() {
+	@include tr(all);
+	&:hover,
+	&:focus,
+	&:active,
+	&--active {
+		@content;
+	}
+}
+
+@mixin posCenter {
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%)
+}
+
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin backGround {
+	background-position:center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@mixin placeholder {
+  &::placeholder {@content} 
+}
+
+@mixin pl-fade-out($duration: 200ms) {
+  @include placeholder {
+    opacity: 1;
+    transition: opacity $duration;
+  }
+  &:focus {
+    @include placeholder {
+      opacity: 0;
+    }
+  } 
+}
+
+@mixin posAFill() {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+@mixin shadowPush ($elementshadow:10px 10px 5px -10px rgba(0,0,0,0.75)) {
+  box-shadow:$elementshadow;
+  @include hover{
+    box-shadow:none;
+  }
+}
+@mixin fontPlacehold {
+	font-weight: 800;
+	&::placeholder{
+			font-weight: 300;
+			color:$white;
+		}
+}
